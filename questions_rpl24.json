@@ -1,0 +1,17 @@
+[
+  {
+    "question": "What is the capital city of Indonesia?",
+    "choices": ["Bandung", "Solo", "Jakarta", "Tokyo"],
+    "answer": "C"
+  },
+  {
+    "question": "1 + 1 is?",
+    "choices": ["2", "idk", "4", "6"],
+    "answer": "A"
+  },
+  {
+    "question": "Python is a ____?",
+    "choices": ["Snake", "Programming Language", "Movie", "Game"],
+    "answer": "B"
+  }
+]

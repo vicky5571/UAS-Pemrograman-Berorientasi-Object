@@ -66,8 +66,10 @@ class University:
         })
 
         # Add Sample Examinations
-        cls.examinations.append(Examination(course1, "Midterm", "2024-12-01", "10:00-12:00"))
-        cls.examinations.append(Examination(course2, "Final Exam", "2024-12-10", "14:00-16:00"))
+        cls.examinations.append(Examination(course1, "Quiz", "2025-01-10", "09:00-10:00"))
+        cls.examinations.append(Examination(course1, "Final Exam", "2025-01-25", "10:00-12:00"))
+        cls.examinations.append(Examination(course2, "Midterm", "2025-02-15", "14:00-16:00"))
+        cls.examinations.append(Examination(course2, "Final Exam", "2025-03-20", "08:00-10:00"))
 
         print("Sample data loaded successfully!\n")
 
@@ -168,9 +170,14 @@ class University:
             13. View Buildings
             14. View Courses
             15. Schedule Examination
-            16. View Examinations by Student
-            17. View Examinations by Course
-            18. Exit
+            16. Add Questions to Examination
+            17. Bulk Add Questions to Examination
+            18. Take Exam
+            19. View Examinations by Student
+            20. View Examinations by Course
+            21. View Scores for an Examination
+            22. View All Scores
+            23. Exit
         ''')
         while True:
             choice = int(input("Enter your choice: "))
@@ -215,11 +222,20 @@ class University:
                 Examination.schedule_exam()
             elif choice == 16:
                 from examination import Examination
-                Examination.view_exams_by_student()
-            elif choice == 17:
+                Examination.add_questions_to_exam()
+            if choice == 17:
                 from examination import Examination
-                Examination.view_exams_by_course()
+                Examination.bulk_add_questions()
             elif choice == 18:
+                from examination import Examination
+                Examination.take_exam()
+            elif choice == 21:
+                from examination import Examination
+                Examination.view_scores()
+            elif choice == 22:
+                from examination import Examination
+                Examination.view_all_scores()
+            elif choice == 23:
                 print("Exiting the system. Goodbye!\n")
                 break
             else:
