@@ -176,8 +176,9 @@ class University:
             19. View Examinations by Student
             20. View Examinations by Course
             21. View Scores for an Examination
-            22. View All Scores
-            23. Exit
+            22. View Scores by Student
+            23. View All Scores
+            24. Exit
         ''')
         while True:
             choice = int(input("Enter your choice: "))
@@ -229,13 +230,22 @@ class University:
             elif choice == 18:
                 from examination import Examination
                 Examination.take_exam()
+            elif choice == 19:
+                from examination import Examination
+                Examination.view_exams_by_student()
+            elif choice == 20:
+                from examination import Examination
+                Examination.view_exams_by_course()
             elif choice == 21:
                 from examination import Examination
                 Examination.view_scores()
-            elif choice == 22:
+            if choice == 22:
+                from examination import Examination
+                Examination.view_scores_by_student()
+            elif choice == 23:
                 from examination import Examination
                 Examination.view_all_scores()
-            elif choice == 23:
+            elif choice == 24:
                 print("Exiting the system. Goodbye!\n")
                 break
             else:

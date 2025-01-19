@@ -177,6 +177,29 @@ class Examination:
         print()
 
     @classmethod
+    def view_scores_by_student(cls):
+        student_id = input("Enter student ID: ")
+        student = next((s for s in University.students if s.student_id == student_id), None)
+
+        if not student:
+            print("Student not found.")
+            return
+
+        print(f"Scores for {student.name} (ID: {student_id}):\n")
+        has_scores = False
+
+        for exam in University.examinations:
+            if student_id in exam.scores:
+                has_scores = True
+                print(f"{exam.exam_type} - {exam.course.course_name} ({exam.course.course_code}): "
+                    f"{exam.scores[student_id]:.2f}%")
+
+        if not has_scores:
+            print(f"No scores available for {student.name}.")
+        print()
+
+
+    @classmethod
     def view_all_scores(cls):
         if not University.examinations:
             print("No examinations scheduled.")
