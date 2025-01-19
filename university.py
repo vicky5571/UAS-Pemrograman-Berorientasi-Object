@@ -270,21 +270,21 @@ class University:
                 print(f"  - Room: {room.room_number}, Capacity: {room.capacity}")
         print()
 
-    @classmethod
-    def view_courses(cls):
-        if not cls.courses:
-            print("No courses available.\n")
-            return
-        print("List of Courses:")
-        for course in cls.courses:
-            print(course)
-            print("  Enrolled Students:")
-            for student in course.students:
-                print(f"    - {student.name} (ID: {student.student_id})")
-        print()
+    # @classmethod
+    # def view_courses(cls):
+    #     if not cls.courses:
+    #         print("No courses available.\n")
+    #         return
+    #     print("List of Courses:")
+    #     for course in cls.courses:
+    #         print(course)
+    #         print("  Enrolled Students:")
+    #         for student in course.students:
+    #             print(f"    - {student.name} (ID: {student.student_id})")
+    #     print()
 
     @classmethod
-    def view_schedules(cls):
+    def view_courses_schedules(cls):
         if not cls.schedules:
             print("No schedules available.\n")
             return
@@ -317,22 +317,21 @@ class University:
             6. Add Course
             7. Assign Student to Course
             8. Assign Course to Schedule
-            9. View Schedules
-            10. View Students
-            11. View Professors
-            12. View Departments
-            13. View Buildings
-            14. View Courses
-            15. Schedule Examination
-            16. Add Questions to Examination
-            17. Bulk Add Questions to Examination
-            18. Take Exam
-            19. View Examinations by Student
-            20. View Examinations by Course
-            21. View Scores for an Examination
-            22. View Scores by Student
-            23. View All Scores
-            24. Exit
+            9. View Students
+            10. View Professors
+            11. View Departments
+            12. View Buildings
+            13. View Courses Schedules
+            14. Schedule Examination
+            15. Add Questions to Examination
+            16. Bulk Add Questions to Examination
+            17. Take Exam
+            18. View Examinations by Student
+            19. View Examinations by Course
+            20. View Scores for an Examination
+            21. View Scores by Student
+            22. View All Scores
+            23. Exit
         ''')
         while True:
             choice = int(input("Enter your choice: "))
@@ -361,45 +360,43 @@ class University:
                 from course import Course
                 Course.assign_schedule()
             elif choice == 9:
-                cls.view_schedules()
-            elif choice == 10:
                 cls.view_students()
-            elif choice == 11:
+            elif choice == 10:
                 cls.view_professors()
-            elif choice == 12:
+            elif choice == 11:
                 cls.view_departments()
-            elif choice == 13:
+            elif choice == 12:
                 cls.view_buildings()
+            elif choice == 13:
+                cls.view_courses_schedules()
             elif choice == 14:
-                cls.view_courses()
-            elif choice == 15:
                 from examination import Examination
                 Examination.schedule_exam()
-            elif choice == 16:
+            elif choice == 15:
                 from examination import Examination
                 Examination.add_questions_to_exam()
-            elif choice == 17:
+            elif choice == 16:
                 from examination import Examination
                 Examination.bulk_add_questions()
-            elif choice == 18:
+            elif choice == 17:
                 from examination import Examination
                 Examination.take_exam()
-            elif choice == 19:
+            elif choice == 18:
                 from examination import Examination
                 Examination.view_exams_by_student()
-            elif choice == 20:
+            elif choice == 19:
                 from examination import Examination
                 Examination.view_exams_by_course()
-            elif choice == 21:
+            elif choice == 20:
                 from examination import Examination
                 Examination.view_scores()
-            elif choice == 22:
+            elif choice == 21:
                 from examination import Examination
                 Examination.view_scores_by_student()
-            elif choice == 23:
+            elif choice == 22:
                 from examination import Examination
                 Examination.view_all_scores()
-            elif choice == 24:
+            elif choice == 23:
                 print("Exiting the system. Goodbye!\n")
                 break
             else:
