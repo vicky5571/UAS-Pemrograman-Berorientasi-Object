@@ -1,3 +1,5 @@
+import random
+
 class University:
     students = []
     professors = []
@@ -95,106 +97,106 @@ class University:
         })
 
         # Add Sample Examinations
-        cls.examinations.append(Examination(course1, "Quiz", "2025-01-10", "09:00-10:00"))
-        cls.examinations.append(Examination(course1, "Midterm", "2025-02-01", "10:00-12:00"))
-        # cls.examinations.append(Examination(course1, "Final Exam", "2025-01-25", "10:00-12:00"))
+        # cls.examinations.append(Examination(course1, "Quiz", "2025-01-10", "09:00-10:00"))
+        # cls.examinations.append(Examination(course1, "Midterm", "2025-02-01", "10:00-12:00"))
+        # cls.examinations.append(Examination(course1, "Final Exam", "2025-01-25", "10:30-13:00"))
 
-        cls.examinations.append(Examination(course2, "Quiz", "2025-02-10", "09:00-10:00"))
-        cls.examinations.append(Examination(course2, "Midterm", "2025-02-15", "14:00-16:00"))
-        cls.examinations.append(Examination(course2, "Final Exam", "2025-03-20", "08:00-10:00"))
+        # cls.examinations.append(Examination(course2, "Quiz", "2025-02-10", "09:00-10:00"))
+        # cls.examinations.append(Examination(course2, "Midterm", "2025-02-15", "14:00-16:00"))
+        # cls.examinations.append(Examination(course2, "Final Exam", "2025-03-20", "08:00-10:00"))
 
-        cls.examinations.append(Examination(course3, "Quiz", "2025-03-10", "09:00-10:00"))
-        cls.examinations.append(Examination(course3, "Midterm", "2025-03-15", "14:00-16:00"))
-        cls.examinations.append(Examination(course3, "Final Exam", "2025-04-20", "08:00-10:00"))
+        # cls.examinations.append(Examination(course3, "Quiz", "2025-03-10", "09:00-10:00"))
+        # cls.examinations.append(Examination(course3, "Midterm", "2025-03-15", "14:00-16:00"))
+        # cls.examinations.append(Examination(course3, "Final Exam", "2025-04-20", "08:00-10:00"))
 
-        cls.examinations.append(Examination(course4, "Quiz", "2025-04-10", "09:00-10:00"))
-        cls.examinations.append(Examination(course4, "Midterm", "2025-04-15", "14:00-16:00"))
-        cls.examinations.append(Examination(course4, "Final Exam", "2025-05-20", "08:00-10:00"))
+        # cls.examinations.append(Examination(course4, "Quiz", "2025-04-10", "09:00-10:00"))
+        # cls.examinations.append(Examination(course4, "Midterm", "2025-04-15", "14:00-16:00"))
+        # cls.examinations.append(Examination(course4, "Final Exam", "2025-05-20", "08:00-10:00"))
 
         # Add Questions
         course_questions = {
-        "rpl24": {
-            "Quiz": [
-                {"question": "What is OOP?", "choices": ["Object-Oriented Programming", "Office-Oriented Programming", "Output-Oriented Programming", "None"], "answer": "A"},
-                {"question": "What is Python?", "choices": ["Language", "Snake", "Game", "IDE"], "answer": "A"},
-                {"question": "What does IDE stand for?", "choices": ["Integrated Development Environment", "Internet Development Environment", "Internal Data Editor", "None"], "answer": "A"},
-                {"question": "What is Git?", "choices": ["Version Control System", "Game", "IDE", "Programming Language"], "answer": "A"}
-            ],
-            "Midterm": [
-                {"question": "What is Inheritance in OOP?", "choices": ["A feature", "Class reuse", "Method reuse", "All"], "answer": "D"},
-                {"question": "Which is not a datatype?", "choices": ["Integer", "String", "HTML", "Float"], "answer": "C"},
-                {"question": "What is Encapsulation?", "choices": ["Hiding details", "Inheritance", "None", "Polymorphism"], "answer": "A"},
-                {"question": "What is PEP?", "choices": ["Python Enhancement Proposal", "Python Enrichment Proposal", "None", "Python Example Proposal"], "answer": "A"}
-            ],
-            "Final Exam": [
-                # {"question": "What is Polymorphism?", "choices": ["Method Overriding", "Object reuse", "Both", "None"], "answer": "A"},
-                # {"question": "What is Module in Python?", "choices": ["Library", "Game", "IDE", "Framework"], "answer": "A"},
-                # {"question": "What is Framework?", "choices": ["Collection of Modules", "IDE", "Game", "None"], "answer": "A"},
-                # {"question": "What is Django?", "choices": ["Web Framework", "IDE", "Programming Language", "None"], "answer": "A"}
-            ]
-        },
-        "pb24": {
-            "Quiz": [
-                {"question": "What is SQL?", "choices": ["Structured Query Language", "Simple Query Language", "Sequential Query Language", "None"], "answer": "A"},
-                {"question": "What is PRIMARY KEY?", "choices": ["Unique Identifier", "Foreign Key", "Duplicate Key", "None"], "answer": "A"},
-                {"question": "What does CRUD stand for?", "choices": ["Create, Read, Update, Delete", "Copy, Read, Update, Delete", "Create, Run, Update, Delete", "None"], "answer": "A"},
-                {"question": "What is JOIN?", "choices": ["Combines Tables", "Splits Tables", "Deletes Tables", "None"], "answer": "A"}
-            ],
-            "Midterm": [
-                {"question": "What is Normalization?", "choices": ["Reduce Redundancy", "Remove Nulls", "Both", "None"], "answer": "A"},
-                {"question": "What is a View?", "choices": ["Virtual Table", "Physical Table", "None", "Query"], "answer": "A"},
-                {"question": "What is a Stored Procedure?", "choices": ["Predefined Query", "Backup", "None", "Command"], "answer": "A"},
-                {"question": "What is a Trigger?", "choices": ["Event-based Procedure", "Query", "Backup", "Command"], "answer": "A"}
-            ],
-            "Final Exam": [
-                {"question": "What is ACID?", "choices": ["Transaction Properties", "Framework", "Library", "None"], "answer": "A"},
-                {"question": "What is Foreign Key?", "choices": ["Reference Key", "Primary Key", "Both", "None"], "answer": "A"},
-                {"question": "What is Indexing?", "choices": ["Speeds Queries", "Deletes Data", "Adds Data", "None"], "answer": "A"},
-                {"question": "What is NoSQL?", "choices": ["Non-relational DB", "SQL Variant", "None", "None of the above"], "answer": "A"}
-            ]
-        },
-                "st24": {
-            "Quiz": [
-                {"question": "What is the mean of [1,2,3,4,5]?", "choices": ["3", "4", "2.5", "None"], "answer": "A"},
-                {"question": "What is the mode of [1,1,2,3]?", "choices": ["1", "2", "3", "None"], "answer": "A"},
-                {"question": "What is the median of [3,2,1,4,5]?", "choices": ["1", "3", "5", "None"], "answer": "B"},
-                {"question": "What is a histogram?", "choices": ["Bar Graph", "Pie Chart", "Line Graph", "None"], "answer": "A"}
-            ],
-            "Midterm": [
-                {"question": "What is probability?", "choices": ["Likelihood of event", "Certainty", "None", "Both"], "answer": "A"},
-                {"question": "What is variance?", "choices": ["Data Spread", "Mean", "Median", "None"], "answer": "A"},
-                {"question": "What is standard deviation?", "choices": ["Square root of variance", "Variance", "Mean", "None"], "answer": "A"},
-                {"question": "What is regression?", "choices": ["Statistical Modeling", "Graphing", "None", "Both"], "answer": "A"}
-            ],
-            "Final Exam": [
-                {"question": "What is hypothesis testing?", "choices": ["Test assumptions", "Nullify Hypothesis", "None", "Both"], "answer": "A"},
-                {"question": "What is correlation?", "choices": ["Relationship Strength", "Variance", "Both", "None"], "answer": "A"},
-                {"question": "What is sampling?", "choices": ["Subset Selection", "Full Data", "Both", "None"], "answer": "A"},
-                {"question": "What is ANOVA?", "choices": ["Variance Analysis", "Probability", "Mean Testing", "None"], "answer": "A"}
-            ]
-        },
-        "md24": {
-            "Quiz": [
-                {"question": "What is a set?", "choices": ["Collection of elements", "Null", "None", "Both"], "answer": "A"},
-                {"question": "What is a graph?", "choices": ["Nodes and Edges", "Bar Graph", "Line Graph", "None"], "answer": "A"},
-                {"question": "What is a tree?", "choices": ["Graph with hierarchy", "Graph", "Both", "None"], "answer": "A"},
-                {"question": "What is a relation?", "choices": ["Mapping", "Null", "Graph", "None"], "answer": "A"}
-            ],
-            "Midterm": [
-                {"question": "What is logic?", "choices": ["Reasoning", "Truth Table", "Both", "None"], "answer": "A"},
-                {"question": "What is a proposition?", "choices": ["Statement", "Graph", "Tree", "None"], "answer": "A"},
-                {"question": "What is induction?", "choices": ["Proof", "Graph", "Tree", "None"], "answer": "A"},
-                {"question": "What is recursion?", "choices": ["Self-reference", "Loop", "Both", "None"], "answer": "A"}
-            ],
-            "Final Exam": [
-                {"question": "What is an automaton?", "choices": ["Machine Model", "Graph", "Tree", "None"], "answer": "A"},
-                {"question": "What is DFA?", "choices": ["Deterministic Finite Automaton", "Data Frame", "Graph", "None"], "answer": "A"},
-                {"question": "What is Turing Machine?", "choices": ["Computational Model", "Graph", "Tree", "None"], "answer": "A"},
-                {"question": "What is complexity?", "choices": ["Algorithm Efficiency", "Graph", "Tree", "None"], "answer": "A"}
-            ]
+            "rpl24": {
+                "Quiz": [
+                    {"question": "What is OOP?", "choices": ["Object-Oriented Programming", "Office-Oriented Programming", "Output-Oriented Programming", "None"], "answer": "A"},
+                    {"question": "What is Python?", "choices": ["Language", "Snake", "Game", "IDE"], "answer": "A"},
+                    {"question": "What does IDE stand for?", "choices": ["Integrated Development Environment", "Internet Development Environment", "Internal Data Editor", "None"], "answer": "A"},
+                    {"question": "What is Git?", "choices": ["Version Control System", "Game", "IDE", "Programming Language"], "answer": "A"}
+                ],
+                "Midterm": [
+                    {"question": "What is Inheritance in OOP?", "choices": ["A feature", "Class reuse", "Method reuse", "All"], "answer": "D"},
+                    {"question": "Which is not a datatype?", "choices": ["Integer", "String", "HTML", "Float"], "answer": "C"},
+                    {"question": "What is Encapsulation?", "choices": ["Hiding details", "Inheritance", "None", "Polymorphism"], "answer": "A"},
+                    {"question": "What is PEP?", "choices": ["Python Enhancement Proposal", "Python Enrichment Proposal", "None", "Python Example Proposal"], "answer": "A"}
+                ],
+                "Final Exam": [
+                    {"question": "What is the capital city of Indonesia?", "choices": ["Bandung", "Solo", "Jakarta", "Tokyo"], "answer": "C"},
+                    {"question": "1 + 1 is?", "choices": ["2", "10", "4", "6"], "answer": "A"},
+                    {"question": "Python is a ____?", "choices": ["Snake", "Programming Language", "Movie", "Game"], "answer": "B"},
+                ]
+            },
+            "pb24": {
+                "Quiz": [
+                    {"question": "What is SQL?", "choices": ["Structured Query Language", "Simple Query Language", "Sequential Query Language", "None"], "answer": "A"},
+                    {"question": "What is PRIMARY KEY?", "choices": ["Unique Identifier", "Foreign Key", "Duplicate Key", "None"], "answer": "A"},
+                    {"question": "What does CRUD stand for?", "choices": ["Create, Read, Update, Delete", "Copy, Read, Update, Delete", "Create, Run, Update, Delete", "None"], "answer": "A"},
+                    {"question": "What is JOIN?", "choices": ["Combines Tables", "Splits Tables", "Deletes Tables", "None"], "answer": "A"}
+                ],
+                "Midterm": [
+                    {"question": "What is Normalization?", "choices": ["Reduce Redundancy", "Remove Nulls", "Both", "None"], "answer": "A"},
+                    {"question": "What is a View?", "choices": ["Virtual Table", "Physical Table", "None", "Query"], "answer": "A"},
+                    {"question": "What is a Stored Procedure?", "choices": ["Predefined Query", "Backup", "None", "Command"], "answer": "A"},
+                    {"question": "What is a Trigger?", "choices": ["Event-based Procedure", "Query", "Backup", "Command"], "answer": "A"}
+                ],
+                "Final Exam": [
+                    {"question": "What is ACID?", "choices": ["Transaction Properties", "Framework", "Library", "None"], "answer": "A"},
+                    {"question": "What is Foreign Key?", "choices": ["Reference Key", "Primary Key", "Both", "None"], "answer": "A"},
+                    {"question": "What is Indexing?", "choices": ["Speeds Queries", "Deletes Data", "Adds Data", "None"], "answer": "A"},
+                    {"question": "What is NoSQL?", "choices": ["Non-relational DB", "SQL Variant", "None", "None of the above"], "answer": "A"}
+                ]
+            },
+            "st24": {
+                "Quiz": [
+                    {"question": "What is the mean of [1,2,3,4,5]?", "choices": ["3", "4", "2.5", "None"], "answer": "A"},
+                    {"question": "What is the mode of [1,1,2,3]?", "choices": ["1", "2", "3", "None"], "answer": "A"},
+                    {"question": "What is the median of [3,2,1,4,5]?", "choices": ["1", "3", "5", "None"], "answer": "B"},
+                    {"question": "What is a histogram?", "choices": ["Bar Graph", "Pie Chart", "Line Graph", "None"], "answer": "A"}
+                ],
+                "Midterm": [
+                    {"question": "What is probability?", "choices": ["Likelihood of event", "Certainty", "None", "Both"], "answer": "A"},
+                    {"question": "What is variance?", "choices": ["Data Spread", "Mean", "Median", "None"], "answer": "A"},
+                    {"question": "What is standard deviation?", "choices": ["Square root of variance", "Variance", "Mean", "None"], "answer": "A"},
+                    {"question": "What is regression?", "choices": ["Statistical Modeling", "Graphing", "None", "Both"], "answer": "A"}
+                ],
+                "Final Exam": [
+                    {"question": "What is hypothesis testing?", "choices": ["Test assumptions", "Nullify Hypothesis", "None", "Both"], "answer": "A"},
+                    {"question": "What is correlation?", "choices": ["Relationship Strength", "Variance", "Both", "None"], "answer": "A"},
+                    {"question": "What is sampling?", "choices": ["Subset Selection", "Full Data", "Both", "None"], "answer": "A"},
+                    {"question": "What is ANOVA?", "choices": ["Variance Analysis", "Probability", "Mean Testing", "None"], "answer": "A"}
+                ]
+            },
+            "md24": {
+                "Quiz": [
+                    {"question": "What is a set?", "choices": ["Collection of elements", "Null", "None", "Both"], "answer": "A"},
+                    {"question": "What is a graph?", "choices": ["Nodes and Edges", "Bar Graph", "Line Graph", "None"], "answer": "A"},
+                    {"question": "What is a tree?", "choices": ["Graph with hierarchy", "Graph", "Both", "None"], "answer": "A"},
+                    {"question": "What is a relation?", "choices": ["Mapping", "Null", "Graph", "None"], "answer": "A"}
+                ],
+                "Midterm": [
+                    {"question": "What is logic?", "choices": ["Reasoning", "Truth Table", "Both", "None"], "answer": "A"},
+                    {"question": "What is a proposition?", "choices": ["Statement", "Graph", "Tree", "None"], "answer": "A"},
+                    {"question": "What is induction?", "choices": ["Proof", "Graph", "Tree", "None"], "answer": "A"},
+                    {"question": "What is recursion?", "choices": ["Self-reference", "Loop", "Both", "None"], "answer": "A"}
+                ],
+                "Final Exam": [
+                    {"question": "What is an automaton?", "choices": ["Machine Model", "Graph", "Tree", "None"], "answer": "A"},
+                    {"question": "What is DFA?", "choices": ["Deterministic Finite Automaton", "Data Frame", "Graph", "None"], "answer": "A"},
+                    {"question": "What is Turing Machine?", "choices": ["Computational Model", "Graph", "Tree", "None"], "answer": "A"},
+                    {"question": "What is complexity?", "choices": ["Algorithm Efficiency", "Graph", "Tree", "None"], "answer": "A"}
+                ]
+            }
         }
-    }
-            # Add Exams and Questions for Each Course
+
+        # Predefined exams, dates, and times
         exam_types = ["Quiz", "Midterm", "Final Exam"]
         exam_dates = {
             "Quiz": "2025-01-10",
@@ -210,22 +212,50 @@ class University:
         courses = [
             Course("Rekayasa Perangkat Lunak", "rpl24", cls.departments[0]),
             Course("Pemrograman Basis Data", "pb24", cls.departments[0]),
-            Course("Statistika", "st24", cls.departments[0]),
-            Course("Matematika Diskrit", "md24", cls.departments[0])
+            Course("Statistika", "st24", cls.departments[1]),
+            Course("Matematika Diskrit", "md24", cls.departments[1])
         ]
 
         cls.courses.extend(courses)
 
+        # Add Exams and Questions for Each Course
         for course in cls.courses:
-            questions_for_course = course_questions[course.course_code]
-            for exam_type in exam_types:
-                exam = Examination(course, exam_type, exam_dates[exam_type], exam_times[exam_type])
-                for q in questions_for_course[exam_type]:
-                    exam.add_question(q["question"], q["choices"], q["answer"])
-                cls.examinations.append(exam)
+            if course.course_code in course_questions:
+                questions_for_course = course_questions[course.course_code]
+                for exam_type in exam_types:
+                    exam = Examination(course, exam_type, exam_dates[exam_type], exam_times[exam_type])
+                    if exam_type in questions_for_course:
+                        for q in questions_for_course[exam_type]:
+                            exam.add_question(q["question"], q["choices"], q["answer"])
+                    else:
+                        print(f"No predefined questions for {exam_type} in {course.course_name}.")
+                    cls.examinations.append(exam)
+
+                    # Automatically generate scores for each student in the course
+                    for student in course.students:
+                        if course.course_code == "rpl24" and exam_type == "Final Exam":
+                            # Special case for rpl24 Final Exam: scores are 66 or 67
+                            random_score = random.choice([0, 33, 66.67, 100])
+                        else:
+                            # Default case: scores are chosen from [0, 25, 50, 75, 100]
+                            random_score = random.choice([0, 25, 50, 75, 100])
+                        
+                        # Save the generated score
+                        exam.save_score(student.student_id, random_score)
 
 
-        print("Sample data loaded successfully!\n")
+
+
+        # for exam in University.examinations:
+        #     print(f"Exam Type: {exam.exam_type}, Course: {exam.course.course_name}")
+        #     print(f"  Total Questions: {len(exam.questions)}")
+        #     for question in exam.questions:
+        #         print(f"    Q: {question['question']}")
+        #         print(f"      Choices: {', '.join(question['choices'])}")
+        #         print(f"      Answer: {question['answer']}")
+        #     print("\n")
+
+
 
 
     @classmethod

@@ -6,7 +6,7 @@
   },
   {
     "question": "1 + 1 is?",
-    "choices": ["2", "idk", "4", "6"],
+    "choices": ["2", "10", "4", "6"],
     "answer": "A"
   },
   {

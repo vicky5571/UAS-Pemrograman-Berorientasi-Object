@@ -38,9 +38,9 @@ class Examination:
         if course:
             exam = cls(course, exam_type, date, time)
             University.examinations.append(exam)
-            print(f"{exam_type} for {course.course_name} scheduled successfully!")
+            print(f"{exam_type} for {course.course_name} scheduled successfully!\n")
         else:
-            print("Course not found. Examination not scheduled.")
+            print("Course not found. Examination not scheduled.\n")
 
     @classmethod
     def view_exams_by_student(cls):
@@ -136,7 +136,7 @@ class Examination:
         print(f"Starting {exam_type} for {exam.course.course_name}...\n")
         score = 0
         for i, question in enumerate(exam.questions, start=1):
-            print(f"Question {i}: {question['question']}")
+            print(f"\nQuestion {i}: {question['question']}")
             for idx, choice in enumerate(question['choices'], start=1):
                 print(f"{chr(64 + idx)}. {choice}")
 
